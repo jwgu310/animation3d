@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .wrap{
+            width: 200px;
+            height: 200px;
+            perspective: 2000px;
+            margin: 200px auto;
+        }
+        .item{
+
+            width: 200px;
+            height: 200px;
+            position:relative;
+            transform-style: preserve-3d;
+            animation: move 8s infinite both;
+        }
+        .item li{
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 196px;
+            height: 196px;
+            line-height: 196px;
+            border: 2px solid red;
+            background: rgba(152,251,152,0.6);
+            font-size: 60px;
+            text-align: center;
+            list-style: none;
+            color: #FFFFEE;
+            transition: 4s;
+        }
+        .item span{
+            position: absolute;
+            left: 50px;
+            top: 50px;
+            width: 96px;
+            height: 96px;
+            line-height: 96px;
+            border: 2px solid red;
+            background: rgba(152,251,152,0.6);
+            font-size: 60px;
+            text-align: center;
+            list-style: none;
+            color: #FFFFEE;
+        }
+
+        .item li:nth-child(1){
+            transform: rotateX(90deg) translateZ(100px);
+        }
+        .item li:nth-child(2){
+            transform: rotateX(-90deg) translateZ(100px);
+        }
+        .item li:nth-child(3){
+            transform: rotateY(90deg) translateZ(100px);
+        }
+        .item li:nth-child(4){
+            transform: rotateY(-90deg) translateZ(100px);
+        }
+        .item li:nth-child(5){
+            transform:translateZ(100px)
+        }
+        .item li:nth-child(6){
+            transform:translateZ(-100px)
+        }
+
+
+        .item span:nth-of-type(1){
+            transform: rotateX(90deg) translateZ(50px);
+        }
+        .item span:nth-of-type(2){
+            transform: rotateX(-90deg) translateZ(50px);
+        }
+        .item span:nth-of-type(3){
+            transform: rotateY(90deg) translateZ(50px);
+        }
+        .item span:nth-of-type(4){
+            transform: rotateY(90deg) translateZ(50px);
+        }
+        .item span:nth-of-type(5){
+            transform:  translateZ(50px);
+        }
+        .item span:nth-of-type(6){
+            transform: translateZ(-50px);
+        }
+
+@keyframes move {
+    0%{
+        transform: rotateX(0deg) rotateY(0deg);
+    }
+    100%{
+        transform: rotateX(290deg) rotateY(290deg);
+    }
+}
+
+
+        .item:hover li:nth-child(1){
+            transform:rotate3d(1,0,0,90deg)  translateZ(200px);
+        }
+        .item:hover li:nth-child(2){
+            transform:rotateX(-90deg)  translateZ(200px);
+        }
+        .item:hover li:nth-child(3){
+            transform:rotateY(90deg)  translateZ(200px);
+        }
+        .item:hover li:nth-child(4){
+            transform:rotateY(-90deg)  translateZ(200px);
+        }
+        .item:hover li:nth-child(5){
+            transform:translateZ(200px);
+        }
+        .item:hover li:nth-child(6){
+            transform:translateZ(-200px);
+        }
+
+
+    </style>
+</head>
+<body>
+<div class="wrap">
+    <ul class="item">
+        <li>1top</li>
+        <li>2bottom</li>
+        <li>3left</li>
+        <li>4right</li>
+        <li>5front</li>
+        <li>6back</li>
+
+    <span class="top">1</span>
+    <span class="bottom">2</span>
+    <span class="left">3</span>
+    <span class="right">4</span>
+    <span class="front">5</span>
+    <span class="back">6</span>
+    </ul>
+</div>
+
+</body>
+</html>
